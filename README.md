@@ -9,8 +9,8 @@ This project aimed to analyse a Superstore Sales Data dataset by segmenting the 
 | Project1_Query | SQL | File containing queries used in MySQL |
 | Superstore Sales Data (Unmodified) | XLSX | Raw dataset as received initially |
 | Superstore Sales Data (Modified) | CSV | Modified dataset with removed unsupported characters |
-| RFM Analysis | XLSX | Output table showing individual, total and combined RFM scores and corresponding segments | 
-| Monetary Value & Number of Customers per Segment | XLSX | Output table showing Monetary Value & Number of Customers per Segment |  
+| RFM Analysis | XLSX | Output table showing individual, total and combined RFM scores and corresponding customer segments | 
+| Monetary Value & Number of Customers per Segment | XLSX | Output table showing Monetary Value & Number of Customers per Segment with Pie-charts |  
 
   
 ## ▶️ __How to Execute the Program__  
