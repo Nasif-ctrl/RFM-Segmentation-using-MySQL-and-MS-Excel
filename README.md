@@ -20,7 +20,7 @@ The files Project1_Query and Superstore Sales Data should be downloaded and save
 i) The column with the heading "Product Name" was selected.  
 ii) The Find and Replace window was opened by Pressing `Ctrl + H`.   
 iii) The character ™ was copied in the  `Find what` field and `Replace all` was clicked. The same was done for the character ®.  
-iv) A quotation mark (") was typed in the  `Find what` field and '_inch_' was typed in the `Replace with` field. Next, `Replace all` was clicked.
+iv) A quotation mark (") was typed in the  `Find what` field and '_inch_' was typed in the `Replace with` field. Next, `Replace all` was clicked.  
 v) The XLSX file was then saved as a CSV file.  
   
 ### After generating the CSV file,  
