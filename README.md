@@ -11,6 +11,7 @@ This project aimed to analyse a Superstore Sales Data dataset by segmenting the 
 | Superstore Sales Data (Modified) | CSV | Modified dataset with removed unsupported characters |
 | RFM Analysis | XLSX | Output table showing individual, total and combined RFM scores and corresponding segments | 
 | Monetary Value & Number of Customers per Segment | XLSX | Output table showing Monetary Value & Number of Customers per Segment |  
+
   
 ## ▶️ __How to Execute the Program__  
 The files Project1_Query and Superstore Sales Data should be downloaded and saved to the desired folder. If you want to practice identifying and correcting the anomalies within the dataset, you can download the unmodified XLSX file. If you want to skip doing so, you can download the modified CSV file instead.  
