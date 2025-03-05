@@ -1,8 +1,8 @@
 # RFM Segmentation using MySQL and MS Excel  
-## __Overview__  
-The objective of this project was to analyze a dataset titled Superstore Sales Data by segmenting the customer base based on recency, frequency of purchase, and monetary value (RFM segmentation). RFM segmentation is a marketing analysis technique used to classify customers based on their purchasing behavior: Recency (how recently a customer made a purchase), Frequency (how often they purchase), and Monetary value (how much they spend). The primary software used for this project were MySQL Workbench 8.0 CE and Microsoft Excel, both of which can function offline without requiring an internet connection. Before analyzing the dataset, it was inspected for missing, duplicate, and unsupported values. To bulk insert a dataset into MySQL, it must be in CSV format. Some datasets contain certain characters that are not supported in CSV format and require preprocessing in XLSX format before conversion. Once successfully imported into MySQL, further data handling can be performed within the software as needed. The SQL queries used in this project included basic queries as well as window functions. After generating the output tables, views were created to facilitate easy access to the derived insights.
+## 📝 __Overview__  
+The objective of this project was to analyze a dataset titled Superstore Sales Data by segmenting the customer base based on recency, frequency of purchase, and monetary value (RFM segmentation). RFM segmentation is a marketing analysis technique used to classify customers based on their purchasing behavior: Recency (how recently a customer made a purchase), Frequency (how often they purchase), and Monetary value (how much they spend). The primary software used for this project were MySQL Workbench 8.0 CE and Microsoft Excel, both of which can function offline without requiring an internet connection. Before analyzing the dataset, it was inspected for missing, duplicate, and unsupported values. To bulk insert a dataset into MySQL, it must be in CSV format. Some datasets contain certain characters that are not supported in CSV format and require preprocessing in XLSX format before conversion. Once successfully imported into MySQL, further data handling can be performed within the software as needed. The SQL queries used in this project included basic queries as well as window functions. After generating the output tables, views were created to facilitate easy access to the derived insights.  
   
-## __Contents__  
+## 📂 __Contents__  
 | File Name | File Type | Description |
 |-----------|-----------|-------------|
 | Superstore Sales Data (Unmodified) | XLSX | Raw dataset as received initially |
@@ -10,16 +10,32 @@ The objective of this project was to analyze a dataset titled Superstore Sales D
 | Project1_Query | SQL | File containing queries used in MySQL |
 | RFM Analysis | XLSX | Output table showing individual, total and combined RFM scores and corresponding segments | 
 | Monetary Value & Number of Customers per Segment | XLSX | Output table showing Monetary Value & Number of Customers per Segment |  
-
-## How to Execute the Program  
+  
+## ▶️ __How to Execute the Program__  
 The files Project1_Query and Superstore Sales Data should be downloaded and saved to the desired folder. If you want to practice identifying and correcting the anomalies within the dataset, you can download the unmodified XLSX file. If you want to skip doing so, you can download the modified CSV file instead.  
   
-Following are the steps that were followed to modify the dataset for this project:  
+### Steps followed to modify the dataset for this project:    
 i) The column with the heading "Product Name" was selected.  
 ii) The Find and Replace window was opened by Pressing `Ctrl + H`.   
 iii) The characters ™ was copied in the  `Find what` field and `Replace all` was clicked. Same was done for the character ®.  
 iv) A quotaion mark (") was typed in the  `Find what` field and '_inch_' was typed in the `Replace with` field. Next, `Replace all` was clicked.
 v) The XLSX file was then saved as CSV file.  
   
-After generating the CSV file, MySQL was opened and a database called _project_rfm_ was created. Right clicking on 'Tables' under project_rfm in the `Schemas` window, the Table Data Import Wizard was used to bulk insert the CSV file. The Order date and Ship date in the inserted table were stored as serial numbers representing the number of days since January 1, 1900. To convert them to actual dates, the day numbers in the columns Order date and Ship date were added to the date __1899-12-30__. These added values were stored in the newly generated columns Order Date (Converted) and Ship Date (Converted).  
-Afterwards, queries were run as shown in the SQL file. The generated outputs were exported as CSV files.  
+### After generating the CSV file,  
+MySQL was opened and a database called _project_rfm_ was created. Right clicking on 'Tables' under project_rfm in the `Schemas` window, the _Table Data Import Wizard_ was used to bulk insert the CSV file. The _Order date_ and _Ship date_ in the inserted table were stored as serial numbers, representing the number of days since January 1, 1900. To convert them to actual dates, the day numbers in the columns _Order date_ and _Ship date_ were added to the date __1899-12-30__. These added values were stored in the newly generated columns _Order Date (Converted)_ and _Ship Date (Converted)_.  
+  
+Afterwards, the queries were run as shown in the SQL file. The generated outputs were exported as CSV files.  
+  
+## 🔍 __Observation__
+Based on the data obtained from the queries, the records span a period of four years, from January 1, 2010, to December 31, 2013. During this time, a total of 2,702 unique customers were served.  
+The data compiled in the spreadsheet "Monetary Value & Number of Customers per Segment" indicates that the largest portion of the customer base, accounting for 23%, consists of churned customers. Additionally, 13% of customers are at risk of churning, while another 13% are classified as highly valuable and should be retained. Customers with the highest total RFM scores, constituting 16% of the base, have been labelled as "Loyal." Furthermore, 13% of customers had a high Recency value. The smallest segment, representing just 1% of the total, comprises new customers, while 21% exhibited mixed metrics that did not align with any specific category.  
+Regarding average monetary value, the majority of revenue was generated by loyal customers, contributing more than 8,000 in unit price. The second-largest revenue segment, amounting to nearly 7,000 unit price, came from customers who are gradually disengaging. The monetary value of both potential churners and active customers stood at 1,000 unit price each. In contrast, churned customers and new customers contributed significantly lower monetary values.  
+  
+## 📌 __Things to Keep in Mind__  
+* After completing the data import in MySQL, check if all the 9426 data were imported. If not, then try to troubleshoot.  
+* The RFM score combinations for each segment were taken arbitrarily and can vary depending on the scenario.  
+* No unit was given corresponding to the sales data, so it was referred to as ‘unit price’.  
+* The handling of special characters and missing values for the dataset in this project was done as per personal preference. In a practical scenario, it is advisable to consult stakeholders or the person-in-charge to determine the most appropriate data-handling approach.
+
+
+  
